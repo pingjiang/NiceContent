@@ -3,6 +3,7 @@
     <head>
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css styles/main.css -->
@@ -10,10 +11,163 @@
         <!-- endbuild -->
     </head>
     <body>
-        <h1>'Allo, 'Allo!</h1>
+        <div class="container">
+          <h1 class="header">NiceContent Options</h1>
+          <h2>Markdown Options</h2>
+          
+          <div class="form">
+            <div class="form-group">
+              <label class="control-label" for="link_list">Link list</label>
+              <select class="form-control" name="link_list" id="link_list">
+                <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
+              <span class="message">render links as references, create link list as appendix</span>
+              <span class="error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="control-label" for="h1_setext">H1 Setext</label>
+              <select class="form-control" name="h1_setext" id="h1_setext">
+                <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
+              <span class="message">underline h1 headers</span>
+              <span class="error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="control-label" for="h2_setext">H2 Setext</label>
+              <select class="form-control" name="h2_setext" id="h2_setext">
+                <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
+              <span class="message">underline h2 headers</span>
+              <span class="error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="control-label" for="h_atx_suf">H atx suf</label>
+              <select class="form-control" name="h_atx_suf" id="h_atx_suf">
+                <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
+              <span class="message">header suffixes (###)</span>
+              <span class="error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="control-label" for="gfm_code">Gfm Code</label>
+              <select class="form-control" name="gfm_code" id="gfm_code">
+                <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
+              <span class="message">gfm code blocks (```)</span>
+              <span class="error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="control-label" for="li_bullet">Li Bullet</label><input class="form-control" type="text" name="li_bullet" value="" id="li_bullet">
+              
+              <span class="message">list item bullet style</span>
+              <span class="error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="control-label" for="hr_char">Hr char</label><input class="form-control" type="text" name="hr_char" value="" id="hr_char">
+              
+              
+              <span class="message">hr style</span>
+              <span class="error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="control-label" for="indnt_str">indnt_str</label><input class="form-control" type="text" name="indnt_str" value="" id="indnt_str">
+              
+              <span class="message">indentation string</span>
+              <span class="error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="control-label" for="bold_char">Bold Char</label><input class="form-control" type="text" name="bold_char" value="" id="bold_char">
+              
+              
+              <span class="message">char used for strong</span>
+              <span class="error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="control-label" for="emph_char">emph_char</label><input class="form-control" type="text" name="emph_char" value="" id="emph_char">
+              
+              <span class="message">char used for em</span>
+              <span class="error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="control-label" for="gfm_del">Gfm Del</label>
+              <select class="form-control" name="gfm_del" id="gfm_del">
+                <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
+              
+              <span class="message">~~strikeout~~ for <del>strikeout</del></span>
+              <span class="error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="control-label" for="gfm_tbls">Gfm Tbls</label>
+              <select class="form-control" name="gfm_tbls" id="gfm_tbls">
+                <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
+              <span class="message">markdown-extra tables</span>
+              <span class="error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="control-label" for="tbl_edges">Tbl edges</label>
+              <select class="form-control" name="tbl_edges" id="tbl_edges">
+                <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
+              <span class="message">show side edges on tables</span>
+              <span class="error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="control-label" for="hash_lnks">Hash Lnks</label>
+              <select class="form-control" name="hash_lnks" id="hash_lnks">
+                <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
+              
+              <span class="message">anchors w/hash hrefs as links</span>
+              <span class="error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label class="control-label" for="br_only">Br Only</label>
+              <select class="form-control" name="br_only" id="br_only">
+                <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
+              <span class="message">avoid using "  " as line break indicator</span>
+              <span class="error"></span>
+            </div>
+            
+            <div class="form-group">
+              <button id="resetMarkdownOptions" class="btn btn-warning">Reset</button>
+              <button id="saveMarkdownOptions" class="btn btn-default">Save</button>
+              <span id="form-msg" class="msg"></span>
+            </div>
+          </div>
+              
+        </div>
                 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 

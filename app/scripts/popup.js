@@ -1,3 +1,11 @@
 'use strict';
 
-console.log('\'Allo \'Allo! Popup');
+var bg = chrome.extension.getBackgroundPage();
+var convertTo = bg.convertTo;
+
+jQuery(document).ready(function($) {
+  $('#convertToMarkdown').click(function() {
+    bg.convertTo('md');
+  });
+  
+});

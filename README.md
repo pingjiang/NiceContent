@@ -22,4 +22,3 @@ Chrome extension convert or translate nice content for you.
 
 * __还未实现__
 
-

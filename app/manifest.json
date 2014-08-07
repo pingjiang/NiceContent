@@ -1,19 +1,30 @@
 {
-    "name": "__MSG_appName__",
-    "version": "0.0.1",
-    "manifest_version": 2,
-    "description": "__MSG_appDescription__",
-    "icons": {
-        "16": "images/icon-16.png",
-        "128": "images/icon-128.png"
-    },
-    "default_locale": "en",
-    "background": {
-        "scripts": [
-            "scripts/chromereload.js",
-            "scripts/background.js"
-        ]
-    },
+  "name": "__MSG_appName__",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "__MSG_appDescription__",
+  "icons": {
+      "16": "images/icon-16.png",
+      "128": "images/icon-128.png"
+  },
+  "default_locale": "en",
+  "background": {
+      "scripts": [
+          "scripts/chromereload.js",
+          "bower_components/reMarked.js/reMarked.js",
+          "scripts/background.js"
+      ]
+  },
+  "commands": {
+    "convertSelectedToMarkdown": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+C",
+        "windows": "Ctrl+Shift+C",
+        "mac": "Command+Shift+C"
+      },
+      "description": "Send 'html2markdown' command which is the same with clicking the browser_action icon."
+    }
+  },
   "page_action": {
     "default_icon": {
       "19": "images/icon-19.png",
@@ -43,8 +54,10 @@
     }
   ],
   "permissions": [
-    "tabs",
     "http://*/*",
-    "https://*/*"
+    "https://*/*",
+    "clipboardWrite",
+    "clipboardRead",
+    "notifications"
   ]
 }
