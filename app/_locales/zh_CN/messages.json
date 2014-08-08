@@ -1,0 +1,38 @@
+{
+  "appName": {
+    "message": "友好文本内容",
+    "description": "友好文本内容"
+  },
+  "appDescription": {
+    "message": "自动转换选择的文本为其它友好的文本格式，比如Markdown等。",
+    "description": "自动转换选择的文本为其它友好的文本格式，比如Markdown等。"
+  },
+  "CopyAsMarkdown": {
+    "message": "拷贝为Markdown",
+    "description": "拷贝为Markdown"
+  },
+  "appPageAction": {
+    "message": "动作页面",
+    "description": "动作页面"
+  },
+  "appConvertToMarkdownCommand": {
+    "message": "转换为Markdown",
+    "description": "转换为Markdown"
+  },
+  "appOptions": {
+    "message": "NiceContent选项",
+    "description": "NiceContent选项"
+  },
+  "appMarkdownOptions": {
+    "message": "Markdown选项",
+    "description": "Markdown选项"
+  },
+  "appOptionsReset": {
+    "message": "重置",
+    "description": "重置"
+  },
+  "appOptionsSave": {
+    "message": "保存",
+    "description": "保存"
+  }
+}

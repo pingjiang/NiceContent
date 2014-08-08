@@ -8,8 +8,6 @@ chrome.tabs.onUpdated.addListener(function (tabId) {
     chrome.pageAction.show(tabId);
 });
 
-console.log('\'Allo \'Allo! Event Page for Page Action');
-
 var copyToClipboard = function (text) {
     var copyDiv = document.createElement('textarea');
     copyDiv.id = 'copydiv';
@@ -92,6 +90,16 @@ function convertTo(format) {
       });
   });
 }
+
+
+chrome.contextMenus.create({
+  "title": chrome.i18n.getMessage('CopyAsMarkdown'), 
+  "contexts":["selection"], 
+  "onclick": function (info, tab) {
+    convertTo('md');
+  }
+});
+
 
 chrome.commands.onCommand.addListener(function (command) {
     console.log('Received Command:' + command);

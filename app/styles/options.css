@@ -1,0 +1,91 @@
+
+.nc-main {
+  width: 780px;
+}
+
+.nc-header {
+	font-size: 18pt;
+	?font-weight: bold;
+	min-height: 40px;
+	text-shadow: #ccc 1px 1px 3px;
+	border: solid 1px #bac;
+	border-radius: 6px;
+	padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 12px;
+	background-color: #eaeeff;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f4f9ff), color-stop(1, #e5ecf9));
+	background: -webkit-gradient(linear, left top, left bottom, 
+		color-stop(0, #fff), color-stop(0.48, hsl(217, 73%, 97%)), color-stop(0.51, hsl(217, 62%, 95%)));
+	background: -webkit-gradient(linear, left top, left bottom, 
+		color-stop(0, #fff), color-stop(0.08, hsl(216, 56%, 99%)), color-stop(0.41, hsl(216, 56%, 96%)), 
+		color-stop(0.45, hsl(216, 56%, 94%)), color-stop(0.95, hsl(216, 56%, 94%)), color-stop(1, hsl(216, 46%, 90%)));
+	background: /*url("../images/logo.png") 68 center no-repeat,*/
+		-webkit-gradient(linear, left top, left bottom, 
+		color-stop(0, #fff), color-stop(0.08, hsl(280, 46%, 98%)), color-stop(0.41, hsl(280, 46%, 96%)), 
+		color-stop(0.45, hsl(280, 46%, 96%)), color-stop(0.95, hsl(280, 46%, 94%)), color-stop(1, hsl(280, 36%, 90%)));
+	-webkit-box-shadow: 0px 1px 2px #ddd;
+}
+
+.nc-header>img {
+	vertical-align: middle;
+	margin-top: -10px;
+	margin-right: -10px;
+	float: right;
+}
+
+.nc-options {
+	min-width: 550px;
+	padding: 15px;
+	?padding-left: 23px;
+	-webkit-box-shadow: 0px 1px 2px #ddd;
+	border: solid 1px #bac;
+	?border-top: none;
+	border-bottom: solid 1px #cbd;
+	border-radius: 6px 6px 0px 0px;
+	background-color: hsl(50, 56%, 98%);
+	?background: -webkit-gradient(linear, left top, left bottom, 
+		color-stop(0, hsl(216, 56%, 98%)), color-stop(0.75, hsl(216, 56%, 97%)), color-stop(1, hsl(216, 56%, 96%)));
+	?background: -webkit-gradient(linear, left top, left bottom, 
+		color-stop(0, #f2f9fb), color-stop(1, #eaf0f2));
+	background-color: hsl(280, 46%, 95%);
+}
+
+.nc-options .panel {
+	
+}
+
+.nc-options .panel-heading {
+	border: solid 1px #cac1cd;
+	border-spacing: 8px;
+	border-radius: 4px 4px 0px 0px;
+	background-color: #f4f8fa;
+	?text-shadow: #d5dae0 0px -1px 1px;
+	-webkit-box-shadow: 0px 1px 1px #ddd;
+	?color: #fff;
+	?color: hsl(270, 40%, 30%);
+	?background: -webkit-gradient(linear, left top, left bottom, 
+		color-stop(0, hsl(216, 36%, 78%)), color-stop(0.05, hsl(216, 26%, 68%)), 
+		color-stop(0.9, hsl(216, 26%, 58%)), color-stop(1, hsl(216, 06%, 48%)));
+	?background: -webkit-gradient(linear, left top, left bottom, 
+		color-stop(0, hsl(216, 76%, 100%)), color-stop(0.75, hsl(216, 76%, 99%)), color-stop(1, hsl(216, 76%, 98%)));
+	background-color: hsl(270, 80%, 99%);
+}
+
+.nc-options .panel-body {
+	border: solid 1px #cac1cd;
+  border-top: 0px;
+	border-spacing: 8px;
+	border-radius: 0px 0px 4px 4px;
+	background-color: #eaf0f2;
+	?background: -webkit-gradient(linear, left top, left bottom, 
+		color-stop(0, #f2f9fb), color-stop(1, #eaf0f2));
+	?background: -webkit-gradient(linear, left top, left bottom, 
+		color-stop(0, hsl(216, 56%, 98%)), color-stop(0.75, hsl(216, 56%, 97%)), color-stop(1, hsl(216, 56%, 96%)));
+	background-color: hsl(275, 66%, 97%);
+	-webkit-box-shadow: 0px 1px 2px #ddd;
+}
+
+.nc-options .form-control {
+  width: 120px;
+}

@@ -8,4 +8,14 @@ jQuery(document).ready(function($) {
     bg.convertTo('md');
   });
   
+  $('#setOptions').click(function() {
+    // var url = 'chrome-extension://__MSG_@@extension_id__/options.html';
+    // console.log('Open options page ', url);
+    chrome.tabs.create({
+        url: 'options.html'
+    });
+  });
+  
+  
+  
 });

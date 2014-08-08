@@ -1,10 +1,14 @@
 {
   "appName": {
     "message": "NiceContent",
-    "description": "The name of the application"
+    "description": "Nice content"
   },
   "appDescription": {
     "message": "Chrome extension convert or translate nice content for you.",
-    "description": "The description of the application"
+    "description": "Chrome extension convert or translate nice content for you."
+  },
+  "CopyAsMarkdown": {
+    "message": "Copy As Markdown",
+    "description": "Copy As Markdown"
   }
 }

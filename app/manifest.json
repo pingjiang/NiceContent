@@ -58,6 +58,7 @@
     "https://*/*",
     "clipboardWrite",
     "clipboardRead",
-    "notifications"
+    "notifications",
+    "contextMenus"
   ]
 }
