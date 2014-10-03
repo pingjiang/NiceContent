@@ -66,36 +66,40 @@ var simplifyTitle = function (title) {
  * @return {string} 选择的字符串。
  */
 var getSelectionHtml = function () {
-    var html = "", sel, range;
-    if (typeof window.getSelection != "undefined") {
-        sel = window.getSelection();
-        if (sel.rangeCount) {
-            var container = document.createElement("div");
-            for (var i = 0, len = sel.rangeCount; i < len; ++i) {
-                range = adjustRange(sel.getRangeAt(i));
-                container.appendChild(range.cloneContents());
-            }
-
-            // travel link to modify the relative url to absolute url.
-            var links = container.querySelectorAll("a");
-            for (var i = 0; i < links.length; i++) {
-                links[i].setAttribute("href", links[i].href);
-            }
-
-            // travel img to modify the relative url to absolute url.
-            var imgs = container.querySelectorAll("img");
-            for (var i = 0; i < imgs.length; i++) {
-                imgs[i].setAttribute("src", imgs[i].src);
-            }
-
-            html = container.innerHTML;
-        }
-    } else if (typeof document.selection != "undefined") {
-        if (document.selection.type == "Text") {
-            html = document.selection.createRange().htmlText;
-        }
+  var selection = window.getSelection || document.selection;
+  if (!selection) {
+    return 'selection is empty.';
+  }
+  var sel = selection(), range;
+  console.log('got selection %s', sel);
+  if (sel.type === 'Text') {
+    return sel.createRange().htmlText;
+  } else if (sel.type === 'Range') {
+    if (!sel.rangeCount || sel.rangeCount === 0) {
+      return '';
     }
-    return html;
+    var container = document.createElement("div");
+    for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+        range = adjustRange(sel.getRangeAt(i));
+        container.appendChild(range.cloneContents());
+    }
+
+    // travel link to modify the relative url to absolute url.
+    var links = container.querySelectorAll("a");
+    for (var i = 0; i < links.length; i++) {
+        links[i].setAttribute("href", links[i].href);
+    }
+
+    // travel img to modify the relative url to absolute url.
+    var imgs = container.querySelectorAll("img");
+    for (var i = 0; i < imgs.length; i++) {
+        imgs[i].setAttribute("src", imgs[i].src);
+    }
+
+    return container.innerHTML;
+  } else {
+    return 'selection type ' + sel.type + ' is not supported yet.';
+  }
 };
 
 chrome.runtime.onMessage.addListener(function onMessage(request, sender, sendResponse) {

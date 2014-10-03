@@ -1,5 +1,19 @@
 'use strict';
 
+var iconUrl = chrome.runtime.getURL('/images/icon-38.png');
+function createNotificationMsg(msg) {
+  return {
+    type: "basic", 
+    title: "Nice Content", 
+    message: msg, 
+    iconUrl: iconUrl
+  };
+}
+var SYS_NOTIFICATIONS = {
+  copyed: createNotificationMsg('Convert to markdown success, already in clipboard.'),
+  error: createNotificationMsg('Convert to markdown error.')
+};
+
 chrome.runtime.onInstalled.addListener(function (details) {
     console.log('previousVersion', details.previousVersion);
 });
@@ -21,13 +35,17 @@ var copyToClipboard = function (text) {
 };
 
 function createNotification(msg){
-    var opt = {type: "basic",title: "__MSG_appName__", message: msg}
-    chrome.notifications.create("notificationName",opt,function(){
-      console.log('notifications fired');
+  var opt = typeof msg === 'string' ? createNotificationMsg(msg) : msg;
+    chrome.notifications.create("convertToNiceContentNotification", opt, function(){
+      // console.log('notifications fired.');
     });
 
     //include this line if you want to clear the notification after 5 seconds
-    setTimeout(function(){chrome.notifications.clear("notificationName",function(){});},5000);
+    setTimeout(function(){ 
+      chrome.notifications.clear("convertToNiceContentNotification", function(){
+        // console.log('notifications cleared.');
+      });
+   },5000);
 }
 
 // optional options w/defaults
@@ -72,19 +90,19 @@ function convertTo(format) {
   
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       chrome.tabs.sendMessage(tabs[0].id, { action: 'getSelectionInfo' }, function (response) {
-        console.log('got response from contentscript', response);
+        // console.log('got response from contentscript', response);
         
         if (!response || response.error) {
-          console.error('getSelectionInfo return error', response && response.error);
+          createNotification('getSelectionInfo return error ' + (response ? response.error : 'unknown'));
         } else {
           // 处理获取的选取
           var markdownText = converter(response.selection);
           // 将结果保存到剪切板
           if (markdownText) {
             copyToClipboard(markdownText);
-            createNotification('Convert to markdown success, already in clipboard.');
+            createNotification(SYS_NOTIFICATIONS.copyed);
           } else {
-            createNotification('Convert to markdown error');
+            createNotification(SYS_NOTIFICATIONS.error);
           }
         }
       });
